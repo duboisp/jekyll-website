@@ -1,0 +1,364 @@
+---
+title: Form survey rating - design experimentation
+---
+
+
+	<fieldset>
+		<legend>Question 6: <span id="q6-desc">Please rate, from not important to very important, the content you would like to see on the Digital Accessibility Toolkit.</span></legend>
+
+		<p><strong>Data output:</strong> expertise or field of expertise of our audience, help prioritize our content and the scope.</p>
+		
+		
+		<aside>
+			<h2>Technical notes</h2>
+			<p>The styling of the following items are in progress. The accessibility is set and partially the responsive design.</p>
+			<ul>
+				<li>The first 2 sub-items don't bold the label by using the CSS class "radio" + Custom CSS + stretched-link CSS</li>
+				<li>The third sub-item center the radio and make the surrounding area clickable</li>
+				<li>The fourth and subsequent bullet are using minimum formatting for the responsive design and meet accessibility</li>
+			</ul>
+		</aside>
+		
+		<div class="row visible-md visible-lg">
+			<div class="col-md-offset-4 col-md-2">
+				<p id="q6-ni">Not important</p>
+			</div>
+			<div class="col-md-2">
+				<p id="q6-i">Important</p>
+			</div>
+			<div class="col-md-2">
+				<p id="q6-vi">Very important</p>
+			</div>
+			<div class="col-md-2">
+				<p id="q6-na">Not applicable</p>
+			</div>
+		</div>
+		
+    <style>
+    
+      input:focus + span,
+      input:hover + span,
+      input:checked + span {
+       display: block!important; 
+      }
+    
+    </style>
+    
+<!-- Question 6.01: -->
+		<div class="row mrgn-bttm-md" role="group" aria-labelledby="q6-01">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-01" class="mrgn-bttm-0">Communication product:</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-01a" class="stretched-link">
+						<input id="q6-01a" name="q6-01" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-01 q6-desc" />
+						<span class="hidden-md hidden-lg">Not important</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-01b" class="stretched-link">
+						<input id="q6-01b" name="q6-01" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-01 q6-desc" />
+						<span class="hidden-md hidden-lg">Important</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-01c" class="stretched-link">
+					<input id="q6-01c" name="q6-01" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-01 q6-desc" />
+						<span class="hidden-md hidden-lg">Very important</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-01d" class="stretched-link">
+						<input id="q6-01d" name="q6-01" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-01 q6-desc" />
+						<span class="hidden-md hidden-lg">Not applicable</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+<!-- Question 6.02: -->
+		<div class="row mrgn-bttm-md" role="group" aria-labelledby="q6-02">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-02" class="mrgn-bttm-0">Compliance:</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-02a" class="stretched-link">
+						<input id="q6-02a" name="q6-02" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-02 q6-desc" />
+						<span class="hidden-md hidden-lg">Not important</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-02b" class="stretched-link">
+						<input id="q6-02b" name="q6-02" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-02 q6-desc" />
+						<span class="hidden-md hidden-lg">Important</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-02c" class="stretched-link">
+						<input id="q6-02c" name="q6-02" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-02 q6-desc" />
+						<span class="hidden-md hidden-lg">Very important</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-02d" class="stretched-link">
+						<input id="q6-02d" name="q6-02" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-02 q6-desc" />
+						<span class="hidden-md hidden-lg">Not applicable</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+
+<!-- Question 6.03: -->
+
+		<div class="row mrgn-bttm-md" role="group" aria-labelledby="q6-03">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-03">Planning and Policy:</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-03a" class="btn-block text-center">
+						<input id="q6-03a" name="q6-03" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-03 q6-desc" />
+						<span class="hidden-md hidden-lg">Not important</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-03b" class="btn-block text-center">
+						<input id="q6-03b" name="q6-03" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-03 q6-desc" />
+						<span class="hidden-md hidden-lg">Important</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-03c" class="btn-block text-center">
+						<input id="q6-03c" name="q6-03" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-03 q6-desc" />
+						<span class="hidden-md hidden-lg">Very important</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<div class="radio mrgn-bttm-0 mrgn-tp-0">
+					<label for="q6-03d" class="btn-block text-center">
+						<input id="q6-03d" name="q6-03" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-03 q6-desc" />
+						<span class="hidden-md hidden-lg">Not applicable</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+<hr />
+	
+<!-- Question 6.04: -->
+		<div class="row" role="group" aria-labelledby="q6-04">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-04">Multimedia Product</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-04a" name="q6-04" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-04 q6-desc" />
+				<label for="q6-04a" class="hidden-md hidden-lg">Not important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-04b" name="q6-04" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-04 q6-desc" />
+				<label for="q6-04b" class="hidden-md hidden-lg">Important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-04c" name="q6-04" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-04 q6-desc" />
+				<label for="q6-04c" class="hidden-md hidden-lg">Very important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-04d" name="q6-04" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-04 q6-desc" />
+				<label for="q6-04d" class="hidden-md hidden-lg">Not applicable</label>
+			</div>
+		</div>
+	
+
+<!-- Question 6.05: -->
+		<div class="row" role="group" aria-labelledby="q6-05">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-05">Inclusive Design</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-05a" name="q6-05" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-05 q6-desc" />
+				<label for="q6-05a" class="hidden-md hidden-lg">Not important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-05b" name="q6-05" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-05 q6-desc" />
+				<label for="q6-05b" class="hidden-md hidden-lg">Important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-05c" name="q6-05" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-05 q6-desc" />
+				<label for="q6-05c" class="hidden-md hidden-lg">Very important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-05d" name="q6-05" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-05 q6-desc" />
+				<label for="q6-05d" class="hidden-md hidden-lg">Not applicable</label>
+			</div>
+		</div>
+
+
+<!-- Question 6.06: -->
+		<div class="row" role="group" aria-labelledby="q6-06">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-06">Event and Collaboration</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-06a" name="q6-06" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-06 q6-desc" />
+				<label for="q6-06a" class="hidden-md hidden-lg">Not important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-06b" name="q6-06" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-06 q6-desc" />
+				<label for="q6-06b" class="hidden-md hidden-lg">Important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-06c" name="q6-06" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-06 q6-desc" />
+				<label for="q6-06c" class="hidden-md hidden-lg">Very important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-06d" name="q6-06" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-06 q6-desc" />
+				<label for="q6-06d" class="hidden-md hidden-lg">Not applicable</label>
+			</div>
+		</div>
+
+
+<!-- Question 6.07: -->
+		<div class="row" role="group" aria-labelledby="q6-07">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-07">Document Creation</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-07a" name="q6-07" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-07 q6-desc" />
+				<label for="q6-07a" class="hidden-md hidden-lg">Not important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-07b" name="q6-07" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-07 q6-desc" />
+				<label for="q6-07b" class="hidden-md hidden-lg">Important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-07c" name="q6-07" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-07 q6-desc" />
+				<label for="q6-07c" class="hidden-md hidden-lg">Very important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-07d" name="q6-07" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-07 q6-desc" />
+				<label for="q6-07d" class="hidden-md hidden-lg">Not applicable</label>
+			</div>
+		</div>
+
+
+<!-- Question 6.08: -->
+		<div class="row" role="group" aria-labelledby="q6-08">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-08">Training</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-08a" name="q6-08" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-08 q6-desc" />
+				<label for="q6-08a" class="hidden-md hidden-lg">Not important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-08b" name="q6-08" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-08 q6-desc" />
+				<label for="q6-08b" class="hidden-md hidden-lg">Important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-08c" name="q6-08" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-08 q6-desc" />
+				<label for="q6-08c" class="hidden-md hidden-lg">Very important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-08d" name="q6-08" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-08 q6-desc" />
+				<label for="q6-08d" class="hidden-md hidden-lg">Not applicable</label>
+			</div>
+		</div>
+
+<!-- Question 6.09: -->
+		<div class="row" role="group" aria-labelledby="q6-09">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-09">Tools and Testing</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-09a" name="q6-09" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-09 q6-desc" />
+				<label for="q6-09a" class="hidden-md hidden-lg">Not important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-09b" name="q6-09" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-09 q6-desc" />
+				<label for="q6-09b" class="hidden-md hidden-lg">Important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-09c" name="q6-09" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-09 q6-desc" />
+				<label for="q6-09c" class="hidden-md hidden-lg">Very important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-09d" name="q6-09" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-09 q6-desc" />
+				<label for="q6-09d" class="hidden-md hidden-lg">Not applicable</label>
+			</div>
+		</div>
+
+<!-- Question 6.10: -->
+		<div class="row" role="group" aria-labelledby="q6-10">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-10">Resources</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-10a" name="q6-10" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-10 q6-desc" />
+				<label for="q6-10a" class="hidden-md hidden-lg">Not important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-10b" name="q6-10" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-10 q6-desc" />
+				<label for="q6-10b" class="hidden-md hidden-lg">Important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-10c" name="q6-10" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-10 q6-desc" />
+				<label for="q6-10c" class="hidden-md hidden-lg">Very important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-10d" name="q6-10" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-10 q6-desc" />
+				<label for="q6-10d" class="hidden-md hidden-lg">Not applicable</label>
+			</div>
+		</div>
+
+<!-- Question 6.11: -->
+		<div class="row" role="group" aria-labelledby="q6-11">
+			<div class="col-md-4 col-xs-12">
+				<p id="q6-11">Procurement</p>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-11a" name="q6-11" type="radio" value="Not important" aria-labelledby="q6-ni" aria-describedby="q6-11 q6-desc" />
+				<label for="q6-11a" class="hidden-md hidden-lg">Not important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-11b" name="q6-11" type="radio" value="Important" aria-labelledby="q6-i" aria-describedby="q6-11 q6-desc" />
+				<label for="q6-11b" class="hidden-md hidden-lg">Important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-11c" name="q6-11" type="radio" value="Very important" aria-labelledby="q6-vi" aria-describedby="q6-11 q6-desc" />
+				<label for="q6-11c" class="hidden-md hidden-lg">Very important</label>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-12">
+				<input id="q6-11d" name="q6-11" type="radio" value="Not applicable" aria-labelledby="q6-na" aria-describedby="q6-11 q6-desc" />
+				<label for="q6-11d" class="hidden-md hidden-lg">Not applicable</label>
+			</div>
+		</div>
+	
+	
+	</fieldset>
+
+	
+	
+	
+	
+	<button type="submit">Submit your results</button>
+</form></div>
