@@ -12,13 +12,13 @@ title: "Report template"
 
 <dl class="dl-horizontal">
 <dt>Evaluation report identifier</dt>
-<dd data-json="#[earl]/@id"></dd>
+<dd data-json-replace="#[earl]/@id"></dd>
 <dt>Type</dt>
 <dd>Accessibility assesment<!-- @type === earl:Assertion--></dd>
 <dt>Asserted by:</dt>
-<dd>Github: @<span data-json="#[earl]/assertedBy"></span></dd>
+<dd>Github: @<span data-json-replace="#[earl]/assertedBy"></span></dd>
 <dt>Date:</dt>
-<dd data-json="#[earl]/dcterms:created"></dd>
+<dd data-json-replace="#[earl]/dcterms:created"></dd>
 <dt>Page:</dt>
 <dd><a data-wb-json='[ {
 	"url": "#[earl]/testedUrl",
@@ -29,11 +29,11 @@ title: "Report template"
 	"type": "replace"
 }]' href=""></a></dd>
 <dt>Subject</dt>
-<dd data-json="#[earl]/dcterms:title"></dd>
+<dd data-json-replace="#[earl]/dcterms:title"></dd>
 <dt>Notes:</dt>
-<dd data-json="#[earl]/dcterms:description"></dd>
+<dd data-json-replace="#[earl]/dcterms:description"></dd>
 <dt>Compliance score</dt>
-<dd data-json="#[earl]/score"></dd>
+<dd data-json-replace="#[earl]/score"></dd>
 </dl>
 
 <h2>Assesment details</h2>
