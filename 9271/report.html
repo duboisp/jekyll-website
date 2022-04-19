@@ -1,0 +1,66 @@
+---
+title: "Report template"
+---
+
+<p>Evaluate the accessibility conformity of the new GCWeb look version 2.</p>
+
+<dl class="dl-horizontal">
+<dt>Evaluation report identifier</dt>
+<dd data-json="#[earl]/@id"></dd>
+<dt>Type</dt>
+<dd>Accessibility assesment<!-- @type === earl:Assertion--></dd>
+<dt>Asserted by:</dt>
+<dd>Github: @<span data-json="#[earl]/assertedBy"></span></dd>
+<dt>Date:</dt>
+<dd data-json="#[earl]/dcterms:created"></dd>
+<dt>Page:</dt>
+<dd><a data-wb-json='[ {
+	"url": "#[earl]/testedUrl",
+	"type": "attr",
+	"attr": "href"
+}, {
+	"url": "#[earl]/testedUrl",
+	"type": "replace"
+}]' href=""></a></dd>
+<dt>Subject</dt>
+<dd data-json="#[earl]/dcterms:title"></dd>
+<dt>Notes:</dt>
+<dd data-json="#[earl]/dcterms:description"></dd>
+<dt>Compliance score</dt>
+<dd data-json="#[earl]/score"></dd>
+</dl>
+
+<h2>Assesment details</h2>
+
+<div data-wb-jsonmanager='{
+		"url": "report.json",
+		"name": "earl"'
+     }></div>
+
+<div data-wb-json='{
+		"url": "#[earl]/results",
+		"mapping": [
+			{ "selector": "h3", "value": "/rdfs:label" },
+			{ "selector": ".outcome", "value": "/outcome" },
+			{ "selector": ".mode", "value": "/mode" },
+			{ "selector": ".comments", "value": "/dcterms:description" }
+		]
+	}'>
+<template>
+	<div class="row">
+		<div class="col-md-4">
+			<h3>Success Criteria</h3>
+		</div>
+		<div class="col-md-8">
+			<dl>
+				<dt>Outcome:</dt>
+				<dd class="outcome"></dd>
+				<dt>Mode:</dt>
+				<dd class="mode"></dd>
+				<dt>Comments</dt>
+				<dd class="comments"></dd>
+			</dl>
+		</div>
+	</div>
+</template>
+</div>
