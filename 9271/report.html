@@ -2,6 +2,12 @@
 title: "Report template"
 ---
 
+<div data-wb-jsonmanager='{
+		"url": "report.json",
+		"name": "earl",
+		"debug": true
+     }'></div>
+
 <p>Evaluate the accessibility conformity of the new GCWeb look version 2.</p>
 
 <dl class="dl-horizontal">
@@ -32,10 +38,6 @@ title: "Report template"
 
 <h2>Assesment details</h2>
 
-<div data-wb-jsonmanager='{
-		"url": "report.json",
-		"name": "earl"
-     }'></div>
 
 <div data-wb-json='{
 		"url": "#[earl]/results",
@@ -49,7 +51,7 @@ title: "Report template"
 <template>
 	<div class="row">
 		<div class="col-md-4">
-			<h3>Success Criteria</h3>
+			<h3 class="mrgn-tp-0">Success Criteria</h3>
 		</div>
 		<div class="col-md-8">
 			<dl>
