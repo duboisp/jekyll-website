@@ -1,12 +1,23 @@
 ---
-title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
+title: "Sondage: Élaboration et recherche sur notre audience cible"
+modified: 2022-06-02
 ---
 <p>Bienvenue à notre questionnaire, et merci d'avoir accepté d'y participer !</p>
 <p>Il s'agit d'une recherche informelle dont l'objectif est de recueillir des données afin de mieux comprendre notre public cible pour notre site <a href="https://a11y.canada.ca/fr/">Boîte à outils d'accessibilité numérique / Espace de partage</a>.</p>
 <p>Les données recueillies seront utilisées pour développer nos persona, y compris leur objectif, leur frustration et leur cas d'utilisation.</p>
-<p>Veuillez noter que certaines questions seront obligatoires et d'autres facultatives. Dans les deux cas, cela sera indiqué à la fin de la question.</p>
+
 <!-- Need a note or a link to a page regarding personal information and we are not intended to collect that type of data. Provide an alternative way for the user if they want to reach us. -->
-<p>L'activité devrait durer au maximum 10 à 15 minutes.</p>
+
+<section class="panel panel-info">
+
+   <header class="panel-heading">
+   <h2 class="panel-title">Note</h2>
+  </header>
+  <div class="panel-body">
+   <p>L'activité devrait durer au maximum 10 à 15 minutes. Il y a 19 questions requises <!-- obligatoires --> et deux (2) optionnelles.</p>
+   <p>Veuillez noter que certaines questions seront requises <!-- obligatoires --> et d'autres optionnelles <!-- facultatives -->. Dans les deux cas, cela sera indiqué à la fin de la question.</p>
+</div>
+</section>
 <div class="wb-frmvld">
    <form action="#" method="get" id="validation-example">
       <!--
@@ -18,29 +29,30 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
          	e) Plus de 6 ans
          	f) Je ne travaille pas dans le domaine de l'accessibilité 
          -->
-      <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">Question 1: Depuis combien d'années travaillez-vous dans le domaine de l'accessibilité ?  (Requis)</span></legend>
+         <input type="hidden" name="language" value="fr" />
+      <section><fieldset class="chkbxrdio-grp">
+         <legend><h2 class="field-name">Question 1: Depuis combien d'années travaillez-vous dans le domaine de l'accessibilité ?  <strong class="text-danger">(Requis)</strong></h2></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
-               <label for="q1a"><input type="radio" value="moins d'un an" name="q1" id="q1a" />moins d'un an</label>
+               <label for="q1a"><input type="radio" value="less than 1 year" name="q1" id="q1a" />moins d'un an</label>
             </li>
             <li class="radio">
-               <label for="q1b"><input type="radio" value="1 à 2 ans" name="q1" id="q1b" />1 à 2 ans</label>
+               <label for="q1b"><input type="radio" value="1 to 2 years" name="q1" id="q1b" />1 à 2 ans</label>
             </li>
             <li class="radio">
-               <label for="q1c"><input type="radio" value="3 à 4 ans" name="q1" id="q1c" />3 à 4 ans</label>
+               <label for="q1c"><input type="radio" value="3 to 4 years" name="q1" id="q1c" />3 à 4 ans</label>
             </li>
             <li class="radio">
-               <label for="q1d"><input type="radio" value="5 à 6 ans" name="q1" id="q1d" />5 à 6 ans</label>
+               <label for="q1d"><input type="radio" value="5 to 6 years" name="q1" id="q1d" />5 à 6 ans</label>
             </li>
             <li class="radio">
-               <label for="q1e"><input type="radio" value="Plus de 6 ans" name="q1" id="q1e" />Plus de 6 ans</label>
+               <label for="q1e"><input type="radio" value="More than 6 years" name="q1" id="q1e" />Plus de 6 ans</label>
             </li>
             <li class="radio">
-               <label for="q1f"><input type="radio" value="Je ne travaille pas dans le domaine de l'accessibilité" name="q1" id="q1f" />Je ne travaille pas dans le domaine de l'accessibilité </label>
+               <label for="q1f"><input type="radio" value="I do not work in the field of accessibility" name="q1" id="q1f" />Je ne travaille pas dans le domaine de l'accessibilité </label>
             </li>
          </ul>
-      </fieldset>
+      </fieldset></section>
       <!--
          Question 2: À quel(s) rôle(s) vous identifiez-vous ? Veuillez sélectionner toutes les réponses qui s'appliquent.  
          
@@ -63,35 +75,35 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
          q.	Autre 
          
          -->
-      <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">Question 2: À quel(s) rôle(s) vous identifiez-vous ? Veuillez sélectionner toutes les réponses qui s'appliquent.  (Requis)</span></legend>
+      <section><fieldset class="chkbxrdio-grp">
+         <legend><h2 class="field-name">Question 2: À quel(s) rôle(s) vous identifiez-vous ? Veuillez sélectionner toutes les réponses qui s'appliquent.  <strong class="text-danger">(Requis)</strong></h2></legend>
          <ul class="form-group list-unstyled">
             <li class="checkbox">
-               <label for="q2a"><input type="checkbox" value="Testeur d'accessibilité / Assurance de la qualité  " name="q2" id="q2a" /> Testeur d'accessibilité / Assurance de la qualité</label>
+               <label for="q2a"><input type="checkbox" value="Accessibility Tester / Quality Assurance" name="q2" id="q2a" /> Testeur d'accessibilité / Assurance de la qualité</label>
             </li>
             <li class="checkbox">
                <label for="q2b"><input type="checkbox" value="Communication" name="q2" id="q2b" /> Communication</label>
             </li>
             <li class="checkbox">
-               <label for="q2c"><input type="checkbox" value="Créateur de contenu" name="q2" id="q2c" /> Créateur de contenu</label>
+               <label for="q2c"><input type="checkbox" value="Content Creator" name="q2" id="q2c" /> Créateur de contenu</label>
             </li>
             <li class="checkbox">
-               <label for="q2d"><input type="checkbox" value="Développeur, “Back-End” " name="q2" id="q2d" /> Développeur, “Back-End”</label>
+               <label for="q2d"><input type="checkbox" value="Developer, Back-End” " name="q2" id="q2d" /> Développeur, “Back-End”</label>
             </li>
             <li class="checkbox">
-               <label for="q2e"><input type="checkbox" value="Développeur, “Front-End”" name="q2" id="q2e" /> Développeur, “Front-End”</label>
+               <label for="q2e"><input type="checkbox" value="Developer, Front-End" name="q2" id="q2e" /> Développeur, “Front-End”</label>
             </li>
             <li class="checkbox">
-               <label for="q2f"><input type="checkbox" value="Directeur" name="q2" id="q2f" /> Directeur</label>
+               <label for="q2f"><input type="checkbox" value="Director" name="q2" id="q2f" /> Directeur</label>
             </li>
             <li class="checkbox">
-               <label for="q2g"><input type="checkbox" value="Ressources humaines" name="q2" id="q2g" /> Ressources humaines</label>
+               <label for="q2g"><input type="checkbox" value="Human Resource" name="q2" id="q2g" /> Ressources humaines</label>
             </li>
             <li class="checkbox">
-               <label for="q2h"><input type="checkbox" value="Juridique, Politique" name="q2" id="q2h" /> Juridique, Politique</label>
+               <label for="q2h"><input type="checkbox" value="Legal, Policy" name="q2" id="q2h" /> Juridique, Politique</label>
             </li>
             <li class="checkbox">
-               <label for="q2i"><input type="checkbox" value="Gestionnaire" name="q2" id="q2i" /> Gestionnaire</label>
+               <label for="q2i"><input type="checkbox" value="Manager" name="q2" id="q2i" /> Gestionnaire</label>
             </li>
             <li class="checkbox">
                <label for="q2j"><input type="checkbox" value="Approvisionnement" name="q2" id="q2j" /> Approvisionnement</label>
@@ -118,7 +130,7 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q2q"> Autres <input type="text" name="q2q" id="q2q" /> </label>
             </li>
          </ul>
-      </fieldset>
+      </fieldset></section>
       <!-- 
          Question 3: Quel domaine est le plus proche de votre environnement de travail ? 
          Data output: which field is the most common of our audience
@@ -135,8 +147,8 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
          •	Autres 
          
          -->
-      <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">Question 3: Quel domaine est le plus proche de votre environnement de travail ? (Requis)</span></legend>
+      <section><fieldset class="chkbxrdio-grp">
+         <legend><h2 class="field-name">Question 3: Quel domaine est le plus proche de votre environnement de travail ? <strong class="text-danger">(Requis)</strong></h2></legend>
          <ul class="form-group list-unstyled">
             <li class="checkbox">
                <label for="q3a"><input id="q3a" name="q3" type="checkbox" value="Acheter des équipements, des biens et des services" /> Acheter des équipements, des biens et des services</label>
@@ -172,7 +184,7 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                 <label for="q3k"> Autres <input type="text" name="q3k" id="q3k" /></label>
             </li>
          </ul>
-      </fieldset>
+      </fieldset></section>
       <!--
          Question 4: Sélectionnez-la ou les raisons pour lesquelles vous consulteriez le site web de la Boîte à outils d'accessibilité numérique. Sélectionnez toutes les réponses qui s'appliquent.    
          
@@ -192,8 +204,8 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
          m.	Autre  
          
          -->
-      <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">Question 4: Sélectionnez-la ou les raisons pour lesquelles vous consulteriez le site web de la Boîte à outils d'accessibilité numérique. Sélectionnez toutes les réponses qui s'appliquent. (Requis)</span></legend>
+      <section><fieldset class="chkbxrdio-grp">
+         <legend><h2 class="field-name">Question 4: Sélectionnez-la ou les raisons pour lesquelles vous consulteriez le site web de la Boîte à outils d'accessibilité numérique. Sélectionnez toutes les réponses qui s'appliquent. <strong class="text-danger">(Requis)</strong></h2></legend>
          <ul class="form-group list-unstyled">
             <li class="checkbox">
                <label for="q4a"><input id="q4a" name="q4" type="checkbox" value="Comment &quot;appliquer l'accessibilité à une tâche spécifique&quot;" /> Comment « appliquer l'accessibilité à une tâche spécifique » (par exemple : comment créer une présentation accessible, ou comment organiser un événement).</label>
@@ -235,16 +247,16 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                 <label for="q4m"> Autres <input type="text" name="q4" id="q4m" /> </label>
             </li>
          </ul>
-      </fieldset>
+      </fieldset></section>
       <!--
          Question 5: Avez-vous des sites web, des ressources ou des références que vous utilisez souvent ou que vous partagez avec vos collègues ? Veuillez les énumérer ci-dessous. 
          Data output: which existing resources/reference is being used by our audience
              • Open text box
          -->
-      <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">Question 5: <label for="q5">Avez-vous des sites web, des ressources ou des références que vous utilisez souvent ou que vous partagez avec vos collègues ? Veuillez les énumérer ci-dessous. (Requis)</label></span></legend>
+      <section><fieldset class="chkbxrdio-grp">
+         <legend><h2 class="field-name"><label for="q5">Question 5: Avez-vous des sites web, des ressources ou des références que vous utilisez souvent ou que vous partagez avec vos collègues ? Veuillez les énumérer ci-dessous. <strong class="text-danger">(Requis)</strong></label></h2></legend>
          <textarea name="q5" id="q5" rows="5" cols="90"></textarea>
-      </fieldset>
+      </fieldset></section>
       <!--
          Question 6: Veuillez évaluer chaque type de contenu, de pas important à très important, que vous souhaiteriez avoir de disponible sur le site de la Boîte à outils d'accessibilité numérique.
          
@@ -346,14 +358,16 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
          
          	
          -->
-         <fieldset class="chkbxrdio-grp">
-            <legend class="required"><span id="q6-desc">Question 6: Veuillez évaluer chaque type de contenu, de pas important à très important, que vous souhaiteriez avoir de disponible sur le site de la Boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+
+     <section>
+         <h2>Question 6: Veuillez évaluer chaque type de contenu, de pas important à très important, que vous souhaiteriez avoir de disponible sur le site de la Boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h2>
            <!-- Question 6.01: -->
 
-          <legend class="required"><span class="field-name">6.01 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu des "produits de communication" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+        <section><fieldset class="chkbxrdio-grp">
+          <legend><h3 class="field-name">6.01 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu des "produits de communication" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
             <ul class="form-group list-unstyled">
                <li class="radio">
-                  <label for="q6a"><input type="radio" name="q6-01" aria-labelledby="q6a" aria-describedby="q6a" value="Non important" id="q6a" /> Non important</label>
+                  <label for="q6a"><input type="radio" name="q6-01" value="Non important" id="q6a" /> Non important</label>
                </li>
                <li class="radio">
                   <label for="q6b"><input type="radio" name="q6-01" aria-labelledby="q6b" aria-describedby="q6b" value="Important" id="q6b" /> Important</label>
@@ -365,11 +379,11 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                   <label for="q6d"><input type="radio" name="q6-01" aria-labelledby="q6d" aria-describedby="q6d" value="Non applicable" id="q6d" /> Non applicable</label>
                </li>
             </ul>
-          </fieldset>
+          </fieldset></section>
 
         <!-- Question 6.02: -->
-        <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">6.02 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "conformité" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+        <section><fieldset class="chkbxrdio-grp">
+         <legend><h3 class="field-name">6.02 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "conformité" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q6A"><input type="radio" name="q6-02" aria-labelledby="q6A" aria-describedby="q6A" value="Non important" id="q6A" /> Non important</label>
@@ -384,10 +398,10 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q6D"><input type="radio" name="q6-02" aria-labelledby="q6D" aria-describedby="q6D" value="Non applicable" id="q6D" /> Non applicable</label>
             </li>
          </ul>
-       </fieldset>
+       </fieldset></section>
        <!-- Question 6.03: -->
-       <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">6.03 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Planification et politique" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+       <section><fieldset class="chkbxrdio-grp">
+         <legend><h3 class="field-name">6.03 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Planification et politique" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q6E"><input type="radio" name="q6-03" aria-labelledby="q6E" aria-describedby="q6E" value="Non important" id="q6E" /> Non important</label>
@@ -402,10 +416,10 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q6H"><input type="radio" name="q6-03" aria-labelledby="q6H" aria-describedby="q6H" value="Non applicable" id="q6H" /> Non applicable</label>
             </li>
          </ul>
-         </fieldset>
+         </fieldset></section>
        <!-- Question 6.04: -->
-       <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">6.04 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Produit multimédia" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+       <section><fieldset class="chkbxrdio-grp">
+         <legend><h3 class="field-name">6.04 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Produit multimédia" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q6e"><input type="radio" name="q6-04" aria-labelledby="q6e" aria-describedby="q6e" value="Non important" id="q6e" /> Non important</label>
@@ -420,10 +434,10 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q6h"><input type="radio" name="q6-04" aria-labelledby="q6h" aria-describedby="q6h" value="Non applicable" id="q6h" /> Non applicable</label>
             </li>
          </ul>
-         </fieldset>
+         </fieldset></section>
        <!-- Question 6.05: -->
-       <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">6.05 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Design inclusif" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+       <section><fieldset class="chkbxrdio-grp">
+         <legend><h3 class="field-name">6.05 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Design inclusif" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q6I"><input type="radio" name="q6-05" aria-labelledby="q6I" aria-describedby="q6I" value="Non important" id="q6I" /> Non important</label>
@@ -438,10 +452,10 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q6L"><input type="radio" name="q6-05" aria-labelledby="q6L" aria-describedby="q6L" value="Non applicable" id="q6L" /> Non applicable</label>
             </li>
          </ul>
-         </fieldset>
+         </fieldset></section>
        <!-- Question 6.06: -->
-       <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">6.06 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Événements et collaboration" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+       <section><fieldset class="chkbxrdio-grp">
+         <legend><h3 class="field-name">6.06 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Événements et collaboration" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q6i"><input type="radio" name="q6-06" aria-labelledby="q6i" aria-describedby="q6i" value="Non important" id="q6i" /> Non important</label>
@@ -456,10 +470,10 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q6l"><input type="radio" name="q6-06" aria-labelledby="q6l" aria-describedby="q6l" value="Non applicable" id="q6l" /> Non applicable</label>
             </li>
          </ul>
-         </fieldset>
+         </fieldset></section>
        <!-- Question 6.07: -->
-       <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">6.07 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Création de documents" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+       <section><fieldset class="chkbxrdio-grp">
+         <legend><h3 class="field-name">6.07 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Création de documents" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q6M"><input type="radio" name="q6-07" aria-labelledby="q6M" aria-describedby="q6M" value="Non important" id="q6M" /> Non important</label>
@@ -474,10 +488,10 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q6P"><input type="radio" name="q6-07" aria-labelledby="q6P" aria-describedby="q6P" value="Non applicable" id="q6P" /> Non applicable</label>
             </li>
          </ul>
-         </fieldset> 
+         </fieldset></section>
        <!-- Question 6.08: -->
-       <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">6.08 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Formation" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+       <section><fieldset class="chkbxrdio-grp">
+         <legend><h3 class="field-name">6.08 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Formation" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q6m"><input type="radio" name="q6-08" aria-labelledby="q6m" aria-describedby="q6m" value="Non important" id="q6m" /> Non important</label>
@@ -492,10 +506,10 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q6p"><input type="radio" name="q6-08" aria-labelledby="q6p" aria-describedby="q6p" value="Non applicable" id="q6p" /> Non applicable</label>
             </li>
          </ul>
-       </fieldset>
+       </fieldset></section>
        <!-- Question 6.09: -->
-       <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">6.09 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Outils et tests" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+       <section><fieldset class="chkbxrdio-grp">
+         <legend><h3 class="field-name">6.09 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Outils et tests" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q6Q"><input type="radio" name="q6-09" aria-labelledby="q6Q" aria-describedby="q6Q" value="Non important" id="q6Q" /> Non important</label>
@@ -510,10 +524,10 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q6T"><input type="radio" name="q6-09" aria-labelledby="q6T" aria-describedby="q6T" value="Non applicable" id="q6T" /> Non applicable</label>
             </li>
          </ul>
-         </fieldset>
+         </fieldset></section>
        <!-- Question 6.10: -->
-       <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">6.10 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Ressources" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+       <section><fieldset class="chkbxrdio-grp">
+         <legend><h3 class="field-name">6.10 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Ressources" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q6q"><input type="radio" name="q6-10" aria-labelledby="q6q" aria-describedby="q6q" value="Non important" id="q6q" /> Non important</label>
@@ -528,10 +542,10 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q6t"><input type="radio" name="q6-10" aria-labelledby="q6t" aria-describedby="q6t" value="Non applicable" id="q6t" /> Non applicable</label>
             </li>
          </ul>
-       </fieldset>
+       </fieldset></section>
        <!-- Question 6.11: -->
-       <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">6.11 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Approvisionnement" dans la boîte à outils d'accessibilité numérique. (Requis)</span></legend>
+       <section><fieldset class="chkbxrdio-grp">
+         <legend><h3 class="field-name">6.11 Veuillez sélectionner le niveau d'importance de l'inclusion du contenu "Approvisionnement" dans la boîte à outils d'accessibilité numérique. <strong class="text-danger">(Requis)</strong></h3></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q6u"><input type="radio" name="q6-11" value="Non important" aria-labelledby="q6u" aria-describedby="q6u" id="q6u" /> Non important</label>
@@ -546,8 +560,7 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
                <label for="q6x"><input type="radio" name="q6-11" aria-labelledby="q6x" aria-describedby="q6x" value="Non applicable" id="q6x" /> Non applicable</label>
             </li>
          </ul>
-      </fieldset>
-   </fieldset>
+      </fieldset></section>
       <!--
          Question 7: Avez-vous suivi une formation en matière d'accessibilité ? 
          Data output: level of experience of our audience
@@ -558,8 +571,8 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
          Question 7B : Pourriez-vous indiquer quelle(s) formation(s) ? (* facultatif) 
          
          -->	
-      <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">Question 7: Avez-vous suivi une formation en matière d'accessibilité ? (Requis)</span></legend>
+      <section><fieldset class="chkbxrdio-grp">
+         <legend><h2 class="field-name">Question 7: Avez-vous suivi une formation en matière d'accessibilité ? <strong class="text-danger">(Requis)</strong></h2></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q7a"><input id="q7a" name="q7" type="radio" value="Oui" /> Oui</label>
@@ -572,10 +585,10 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
             </li>
          </ul>
          <div class="form-group">
-            <label for="q7-b">7.01 Si vous avez répondu <strong>Oui ou En cours</strong>, pourriez-vous nous indiquer quelle(s) formation(s) ? (Optionnel)</label>
+            <h3><label for="q7-b">7.01 Si vous avez répondu <strong>Oui ou En cours</strong>, pourriez-vous nous indiquer quelle(s) formation(s) ? <strong>(Optionnel)</strong></label></h3>
             <input id="q7-b" class="form-control" type="text" name="q7-b" />
          </div>
-      </fieldset>
+      </fieldset></section>
       <!--
          Question 8: Avez-vous une certification liée à l'accessibilité ?
          Data output: level of experience of our audience
@@ -586,8 +599,8 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
          
          Question 8B : Pourriez-vous nous indiquer quelle(s) certification(s) ? (* facultatif)
          -->
-      <fieldset class="chkbxrdio-grp">
-         <legend class="required"><span class="field-name">Question 8: Avez-vous une certification liée à l'accessibilité ? (Requis)</span></legend>
+      <section><fieldset class="chkbxrdio-grp">
+         <legend><h2 class="field-name">Question 8: Avez-vous une certification liée à l'accessibilité ? <strong class="text-danger">(Requis)</strong></h2></legend>
          <ul class="form-group list-unstyled">
             <li class="radio">
                <label for="q8a"><input name="q8" type="radio" value="Oui" id="q8a"/> Oui</label>
@@ -603,19 +616,19 @@ title: Sondage, Dévélopper des personas pour les conseils d'accessibilité
             </li>
          </ul>
          <div class="form-group">
-            <label for="q8-b">8.01 Si vous avez répondu <strong>Oui ou En cours</strong>, pourriez-vous nous indiquer quelle(s) certification(s) ? (Optionnel)</label>
+            <h3><label for="q8-b">8.01 Si vous avez répondu <strong>Oui ou En cours</strong>, pourriez-vous nous indiquer quelle(s) certification(s) ? <strong>(Optionnel)</strong></label></h3>
             <input id="q8-b" class="form-control" type="text" name="q8-b" />
          </div>
-      </fieldset>
+      </fieldset></section>
       <!--
          À quelles associations, quels réseaux sociaux, événements et/ou groupes liés à l'accessibilité participez-vous ? (par exemple : Groupe de travail sur l'accès (AWG), TIC, Communauté de pratique, etc.) 
          
          -->
-      <fieldset class="chkbxrdio-grp">
-         <label for="q9" class="required"  aria-describedby="exemple">Question 9: À quelles associations, quels réseaux sociaux, événements et/ou groupes liés à l'accessibilité participez-vous ? (Requis)</label>
+      <section><fieldset class="chkbxrdio-grp">
+         <legend><h2><label for="q9" class="required" aria-describedby="exemple">Question 9: À quelles associations, quels réseaux sociaux, événements et/ou groupes liés à l'accessibilité participez-vous ? <strong class="text-danger">(Requis)</strong></label></h2></legend>
          <p id="exemple">par exemple : Groupe de travail sur l'accès (AWG), TIC, Communauté de pratique, etc.)</p>
          <textarea name="q9" id="q9" rows="5" cols="90"></textarea>
-      </fieldset>
+      </fieldset></section>
       <button type="submit" class="btn btn-primary btn-lg mrgn-tp-lg">Soumettre vos résultats</button>
    </form>
 </div>
