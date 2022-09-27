@@ -5,8 +5,8 @@ modified: 2022-06-02
 
 
 <script>
-window.addEventListener('pageshow', function( event ) {
-  console.log( "pageshow" );
+window.addEventListener('visibilitychange', function( event ) {
+  console.log( "visibilitychange" );
 	console.log( event );
   //$( "h1" ).text( Date.now() );
 });
