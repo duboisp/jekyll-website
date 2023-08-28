@@ -24,11 +24,13 @@ title: Test reporting template
               <li>
                 <a href="{{ assessment.link }}">
                   {{ assessment.date }}, {{ assessment.state }} 
-                  <%if assessment.isPartial %>
+                  <% if assessment.isPartial %>
                     ( Partial )
                   <% endif %>
                 </a>
               </li>
+            <% else %>
+              <li>None</li>
             <% endfor %>
           </ul>
         </td>
