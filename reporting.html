@@ -65,15 +65,18 @@ title: Test reporting template
 -->
 
 
-<ul>
+<details>
+	<summary>Filtering by components option</summary>
+<ul class="list-unstyled">
 {% for component in site.data.a11yTestRequirement.allComponents %}  
-  <li>
+  <li class="checkbox">
     <label>
 				<input type="checkbox" name="component" class="wb-tagfilter-ctrl" value="{{ component }}">{{ component }} 
 		</label>
   </li>
 {% endfor %}
 </ul>
+</details>
 
 <dl class="dl-horizontal dl-max">
   {% for testRequirement in site.data.a11yTestRequirement.list %}  
