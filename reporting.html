@@ -41,6 +41,7 @@ title: Test reporting template
 </table>
 
 
+<section class="wb-tagfilter provisional">
 <h2 id="testReq">Test requirement</h2>
 
 <!-- Tag filter for each Component 
@@ -62,9 +63,15 @@ title: Test reporting template
   ]
 
 -->
+
+
 <ul>
-{% for component in site.data.a11yTestRequirement.allComponent %}  
-  <li>{{ component }} </li>
+{% for component in site.data.a11yTestRequirement.allComponents %}  
+  <li>
+    <label>
+				<input type="checkbox" name="component" class="wb-tagfilter-ctrl" value="{{ component }}">{{ component }} 
+		</label>
+  </li>
 {% endfor %}
 </ul>
 
@@ -72,7 +79,7 @@ title: Test reporting template
   {% for testRequirement in site.data.a11yTestRequirement.list %}  
     <dt>{{ testRequirement.id }}</dt>
     {% for component in testRequirement.components %}
-      <dd data-tag="{{ component.name }}">
+      <dd data-wb-tags="{{ component.name }}">
         <section>
           <h3 class="h5">{{ component.name }}</h3>
           <ul>
@@ -89,4 +96,4 @@ title: Test reporting template
 </dl>
 
 
-  
+  </section>
