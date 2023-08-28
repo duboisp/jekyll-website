@@ -2,7 +2,7 @@
 title: Test reporting template
 ---
 
-<h2>Components</h2>
+<h2 id="sites">Sites components</h2>
 
 <table class="table">
   <thead>
@@ -23,7 +23,7 @@ title: Test reporting template
             {% for assessment in component.a11y %}
               <li>
                 <a href="{{ assessment.link }}">
-                  {{ assessment.date }}, {{ assessment.state }} 
+                  {{ assessment.date }} - {{ assessment.state }} 
                   {% if assessment.isPartial %}
                     ( Partial )
                   {% endif %}
@@ -39,3 +39,54 @@ title: Test reporting template
     {% endfor %}
   </tbody>
 </table>
+
+
+<h2 id="testReq">Test requirement</h2>
+
+<!-- Tag filter for each Component 
+
+{
+  allComponents: [ "" ],
+  list = [
+    {
+      id: "Test Requirement ID",
+      component: [
+        {
+          name: "Component Name"
+          a11y: [
+            { date: "date", link: "link", outcome: "outcome" }
+          ]
+        }
+      ]
+    }
+  ]
+
+-->
+<ul>
+{% for component in site.data.a11yTestRequirement.allComponent %}  
+  <li>{{ component }} </li>
+{% endfor %}
+</ul>
+
+<dl class="dl-horizontal dl-max">
+  {% for testRequirement in site.data.a11yTestRequirement.list %}  
+    <dt>{{ testRequirement.id }}</dt>
+    {% for component in testRequirement.components %}
+      <dd data-tag="{{ component.name }}">
+        <section>
+          <h3 class="h5">{{ component.name }}</h3>
+          <ul>
+            {% for assessment in component.a11y %}
+              <li><a href="{{ assessment.link }}">{{ assessment.date }} - {{ assessment.outcome }}</a></li>
+            {% else %}
+              <li>None</li>
+            {% endfor %}
+          </ul>
+        </section>
+      </dd>
+    {% endfor %}
+  {% endfor %}
+</dl>
+
+
+  
