@@ -1,0 +1,39 @@
+---
+title: Test reporting template
+---
+
+<h2>Components</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Technical name</th>
+      <th>Latest <abbr title="Accessibility Conformance Report">ACR</abbr></th>
+      <th>Assessment (All)</th>
+      <th>ACR (All)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for component in site.data.a11yComponents %}  
+      <tr>
+        <th>{{ component.name }}</th>
+        <td>None</td>
+        <td>
+          <ul>
+            <% for assessment in component.a11y %>
+              <li>
+                <a href="{{ assessment.link }}">
+                  {{ assessment.date }}, {{ assessment.state }} 
+                  <%if assessment.isPartial %>
+                    ( Partial )
+                  <% endif %>
+                </a>
+              </li>
+            <% endfor %>
+          </ul>
+        </td>
+        <td>None</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
