@@ -20,18 +20,18 @@ title: Test reporting template
         <td>None</td>
         <td>
           <ul>
-            <% for assessment in component.a11y %>
+            {% for assessment in component.a11y %}
               <li>
                 <a href="{{ assessment.link }}">
                   {{ assessment.date }}, {{ assessment.state }} 
-                  <% if assessment.isPartial %>
+                  {% if assessment.isPartial %}
                     ( Partial )
-                  <% endif %>
+                  {% endif %}
                 </a>
               </li>
-            <% else %>
+            {% else %}
               <li>None</li>
-            <% endfor %>
+            {% endfor %}
           </ul>
         </td>
         <td>None</td>
