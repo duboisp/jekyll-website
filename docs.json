@@ -282,7 +282,8 @@
 						"@type": [ "rdf:HTML", "@id" ],
 						"@value": "ajax/report-problem-en.html"
 					}
-				}
+				},
+				"Hello world"
 			]
 		}
 	]
