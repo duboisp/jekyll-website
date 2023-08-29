@@ -228,6 +228,18 @@ title: Test reporting template
         </section>
       </dd>
     {% endfor %}
+    <dd>
+	<details>
+	  <summary>Totals</summary>
+    <ul>
+      <li>Passed: {{ testRequirement.nbPassed }}</li>
+      <li>Failed: {{ testRequirement.nbFailed }}</li>
+      <li>Can't tell: {{ testRequirement.nbCantTell }}</li>
+      <li>Not applicable: {{ testRequirement.nbInapplicable }}</li>
+      <li>Not tested: {{ testRequirement.nbUntested }}</li>
+    </ul>
+	</details>
+    </dd>
   {% endfor %}
 </dl>
 
