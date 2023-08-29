@@ -133,7 +133,7 @@ layout: default
 		{
 			"template": "[data-assets]",
 			"test": "fn:isArray",
-			"value": "/assets",
+			"assess": "/assets",
 			"mapping": [
 				
 				{ 
@@ -143,7 +143,7 @@ layout: default
 							"template": "[data-show-asset]",
 							"test": "fn:guessType",
 							"expect": "source-code",
-							"assess": "/",
+							"value": "/assets",
 							"mapping": [
 									{ "selector": "p[data-desc]", "value": "/description" },
 									{ "selector": "code[data-code]", "value": "/code", "encode": true }
@@ -152,7 +152,7 @@ layout: default
 						{
 							"template": "[data-text]",
 							"test": "fn:isLiteral",
-							"assess": "/",
+							"value": "/assets",
 							"mapping": [
 									{ "selector": "li", "value": "/" }
 							]
