@@ -39,11 +39,22 @@ title: Test reporting template
             {% for acr in component.acr %}
               <li>
                 <a href="{{ acr.link }}">
-                  {{ acr.date }} - 
+		  {% if acr.expiredOn %}
+		    {{ acr.expiredOn }}
+		  {% elsif acr.issuedOn %}
+		    {{ acr.issuedOn }}
+		  {% elsif acr.modifiedOn %}
+		    {{ acr.modifiedOn }}
+		  {% elsif acr.createdOn %}
+		    {{ acr.createdOn }}
+		  {% else %}
+		    No date
+		  {% endif %}
+                   -
 		  {% if acr.isPartial %}
-                    <strong>Partial</strong>: 
+                    <strong>Partial</strong>:
                   {% endif %}
-		  {{ acr.state }} 
+		  {{ acr.state }}
                 </a>
               </li>
             {% else %}
