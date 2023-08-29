@@ -1730,25 +1730,27 @@ layout: default
 
 						{ 
 							"@type": "rdf:Alt",
-							"mapping": [{
-								"template": "[data-show-asset]",
-								"test": "fn:guessType",
-								"expect": "sourcecode",
-								"assess": "/",
-								"mapping": [
-										{ "selector": "p[data-desc]", "value": "/description" },
-										{ "selector": "code[data-code]", "value": "/code", "encode": true }
-					]
-},
-	{
-								"template": "[data-text]",
-								"test": "fn:isLiteral",
-								"assess": "/",
-								"mapping": [
-										{ "selector": "li", "value": "/" }
-					]
-}]
-	
+							"mapping": [
+								{
+									"template": "[data-show-asset]",
+									"test": "fn:guessType",
+									"expect": "sourcecode",
+									"assess": "/",
+									"mapping": [
+											{ "selector": "p[data-desc]", "value": "/description" },
+											{ "selector": "code[data-code]", "value": "/code", "encode": true }
+									]
+								},
+								{
+									"template": "[data-text]",
+									"test": "fn:isLiteral",
+									"assess": "/",
+									"mapping": [
+											{ "selector": "li", "value": "/" }
+									]
+								}
+							]
+						}
 					]
 				}
 			]
