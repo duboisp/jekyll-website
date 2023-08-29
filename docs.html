@@ -137,7 +137,9 @@ layout: default
 			"mapping": [
 
 				{
+	      			 "note": "Iterate the items",
 				 "selector": "ul",
+				 "value": "/assets
 				 "mapping": [
 				{ 
 					"@type": "rdf:Alt",
@@ -146,7 +148,7 @@ layout: default
 							"template": "[data-show-asset]",
 							"test": "fn:guessType",
 							"expect": "source-code",
-							"value": "/assets",
+							"assess": "/",
 							"mapping": [
 									{ "selector": "p[data-desc]", "value": "/description" },
 									{ "selector": "code[data-code]", "value": "/code", "encode": true }
@@ -155,7 +157,7 @@ layout: default
 						{
 							"template": "[data-text]",
 							"test": "fn:isLiteral",
-							"value": "/assets",
+							"assess": "/",
 							"mapping": [
 									{ "selector": "li", "value": "/" }
 							]
