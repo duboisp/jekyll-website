@@ -72,6 +72,27 @@ title: Test reporting template
 <section class="wb-tagfilter provisional">
 <h2 id="testReq">Accessibility conformance summary by conformity</h2>
 
+<fieldset>
+<legend><span class="field-name">Filter by conformance status</span></legend>
+<ul class="list-unstyled">
+	<li class="checkbox">
+		<label>
+			<input type="checkbox" name="platform" class="wb-tagfilter-ctrl" value="acr:satisfied"> Satisfied
+		</label>
+	</li>
+	<li class="checkbox">
+		<label>
+			<input type="checkbox" name="platform" class="wb-tagfilter-ctrl" value="acr:furtherTestNeeded"> Further test needed
+		</label>
+	</li>
+	<li class="checkbox">
+		<label>
+			<input type="checkbox" name="platform" class="wb-tagfilter-ctrl" value="acr:notSatisfied"> Not satisfied
+		</label>
+	</li>
+</ul>
+</fieldset>
+	
 <details>
 	<summary>Filtering by components option</summary>
 <ul class="list-unstyled">
@@ -94,7 +115,7 @@ title: Test reporting template
           <h3 class="h5">{{ component.name }}</h3>
           <ul>
             {% for acr in component.acr %}
-              <li><a href="{{ acr.link }}">{{ acr.date }} - {{ acr.conformance }}</a></li>
+              <li data-wb-tags="{{ acr.conformance }}"><a href="{{ acr.link }}">{{ acr.date }} - {{ acr.conformance }}</a></li>
             {% else %}
               <li>None</li>
             {% endfor %}
