@@ -269,3 +269,241 @@ layout: default
 	</details>
 </template>
 </div>
+
+
+
+
+
+
+<hr />
+
+<h2>Without RDF:alt</h2>
+
+
+<div data-wb-json='{
+	"url": "#[api]/iteration",
+	"mapping": [
+		{ "selector": "summary [data-id]", "value": "/@id" },
+		{ "selector": "summary [data-name]", "value": "/name/en" },
+		{ "selector": "[data-detectability]", "value": "/detectableBy" },
+		{ "selector": "[data-date]", "value": "/date" },
+		{
+			"template": "[data-predecessor]",
+			"test": "fn:guessType",
+			"expect": "xsd:string",
+			"assess": "/predecessor",
+			"mapping": [
+				{ "selector": "[data-predecessor]", "value": "/predecessor" }
+			]
+		},
+		{
+			"template": "[data-successor]",
+			"test": "fn:guessType",
+			"expect": "xsd:string",
+			"assess": "/successor",
+			"mapping": [
+				{ "selector": "[data-successor]", "value": "/successor" }
+			]
+		},
+		{
+			"template": "[data-breaking]",
+			"test": "fn:guessType",
+			"expect": "rdfs:Resource",
+			"assess": "/breaking",
+			"mapping": [
+				{
+					"selector": "ul",
+					"value": "/breaking",
+					"mapping": [
+						{ "selector": "[data-api]", "value": "/@id" },
+						{ "selector": "[data-changes]", "value": "/@value" }
+					]
+				}
+			]
+		},
+		{
+			"template": "[data-additions]",
+			"test": "fn:guessType",
+			"expect": "rdfs:Resource",
+			"assess": "/additions",
+			"mapping": [
+				{
+					"selector": "ul",
+					"value": "/additions",
+					"mapping": [
+						{ "selector": "[data-api]", "value": "/@id" },
+						{ "selector": "[data-changes]", "value": "/@value" }
+					]
+				}
+			]
+		},
+		{
+			"template": "[data-fixes]",
+			"test": "fn:guessType",
+			"expect": "rdfs:Resource",
+			"assess": "/fixes",
+			"mapping": [
+				{
+					"selector": "ul",
+					"value": "/fixes",
+					"mapping": [
+						{ "selector": "[data-api]", "value": "/@id" },
+						{ "selector": "[data-changes]", "value": "/@value" }
+					]
+				}
+			]
+		},
+		{
+			"template": "[data-asset]",
+			"test": "fn:isArray",
+			"value": "/assetssadfaasdf",
+			"mapping": [
+				{
+					"template": "[data-asset-source-code]",
+					"test": "fn:guessType",
+					"value": "/",
+					"expect": "source-code",
+					"mapping": [
+						{ "selector": "[data-asset-code-desc]", "value": "/description" },
+						{ "selector": "code", "value": "/code", "isHTML": true }
+					]
+				}
+			]
+		},
+		{
+			"template": "[data-assets]",
+			"test": "fn:isArray",
+			"assess": "/assets",
+			"mapping": [
+
+				{
+	      			 "note": "Iterate the items",
+				 "selector": "ul",
+				 "value": "/assets",
+				 "mapping": [
+						{
+							"template": "[data-show-asset]",
+							"test": "fn:guessType",
+							"expect": "source-code",
+							"assess": "/",
+							"mapping": [
+									{ "selector": "p[data-desc]", "value": "/description" },
+									{ "selector": "code[data-code]", "value": "/code", "encode": true }
+							]
+						},
+						{
+							"template": "[data-text]",
+							"test": "fn:isLiteral",
+							"assess": "/",
+							"mapping": [
+									{ "selector": "li", "value": "/" }
+							]
+						}
+				]}
+
+			]
+		},
+		{
+			"template": "[data-example]",
+			"test": "fn:isArray",
+			"assess": "/example/en",
+			"mapping": [
+				{
+					"selector": "ul[data-assets-container]",
+					"value": "/example/en",
+					"mapping": [
+						{ "selector": "a", "value": "/href", "attr": "href" },
+						{ "selector": "a", "value": "/text" }
+					]
+				}
+			]
+		}
+	]
+}'>
+
+<template data-iteration>
+	<details>
+		<summary><span data-name></span> (id: <em data-id>[[ Iteration id ]]</em>)</summary>
+		<dl class="dl-horizontal">
+			<dt>Detectable by:</dt> <dd data-detectability>detectableBy</dd>
+			<template data-successor>
+				<dt>Successor:</dt> <dd data-successor>Iteration ID</dd>
+			</template>
+			<dt>Created on:</dt> <dd data-date>Not specified</dd>
+			<template data-breaking>
+				<dt>Breaking changes</dt>
+				<dd>
+					<ul>
+						<template>
+							<li lang="en"><span data-api>API</span>: <span data-changes>Breaking change description</span></li>
+						</template>
+					</ul>
+				</dd>
+			</template>
+
+			<template data-additions>
+				<dt>Additions</dt>
+				<dd>
+					<ul>
+						<template>
+							<li lang="en"><span data-api>API</span>: <span data-changes>Addition description</span></li>
+						</template>
+					</ul>
+				</dd>
+			</template>
+
+			<template data-fixes>
+				<dt>Fixes</dt>
+				<dd>
+					<ul>
+						<template>
+							<li lang="en"><span data-api>API</span>: <span data-changes>Fix description</span></li>
+						</template>
+					</ul>
+				</dd>
+			</template>
+
+			<template data-predecessor>
+				<dt>Predecessor:</dt> <dd data-predecessor>Iteration ID</dd>
+			</template>
+			<template data-assetasdfasdfa>
+				<dt>Assets</dt>
+				<template data-asset-source-code>
+					<dd>
+						<p class="h4" data-asset-code-desc>Title</p>
+						<pre><code>Code sample</code></pre>
+					</dd>
+				</template>
+			</template>
+			<template data-example>
+				<dt>Examples</dt>
+				<dd>
+					<ul data-example>
+						<template>
+							<li><a href></a></li>
+						</template>
+					</ul>
+				</dd>
+			</template>
+			<template data-assets>
+				<dt>Assets</dt>
+				<dd>
+					<ul data-assets-container>
+						<template data-show-asset>
+							<li><p data-desc></p>
+							    <pre><code data-code></code></pre>
+              </li>
+						</template>
+						<template data-text>
+							<li></li>
+						</template>
+					</ul>
+				</dd>
+			</template>
+		</dl>
+	</details>
+</template>
+</div>
+
+
+
