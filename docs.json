@@ -1,0 +1,289 @@
+{
+	"@context": {
+		"@version": 2.0,
+		"dct": "http://purl.org/dc/terms/",
+		"title": { "@id": "dct:title", "@container": "@language" },
+		"description": { "@id": "dct:description", "@container": "@language" },
+		"modified": "dct:modified"
+	},
+	"title": {
+		"en": "Feedback area",
+		"fr": "Zone de rétroaction"
+	},
+	"description": {
+		"en": "Documentation on how to use the elements of the feedback area.",
+		"fr": "Documentation sur l'utilisation des éléments de la zone commentaires."
+	},
+	"modified": "2023-01-10",
+	"componentName": "feedback",
+	"status": "stable",
+	"pages": {
+		"docs": [
+			{
+				"title": "Documentation for the feedback area",
+				"language": "en",
+				"path": "feedback-docs-en.html"
+			},
+			{
+				"title": "Documentation pour la zone de rétroaction",
+				"language": "fr",
+				"path": "feedback-docs-fr.html"
+			}
+		],
+		"examples": [
+			{
+				"title": "Page feedback tool",
+				"language": "en",
+				"path": "page-feedback-en.html"
+			},
+			{
+				"title": "Outil de rétroaction sur la page",
+				"language": "fr",
+				"path": "page-feedback-fr.html"
+			},
+			{
+				"title": "Page feedback tool with contact link",
+				"language": "en",
+				"path": "page-feedback-contact-en.html"
+			},
+			{
+				"title": "Outil de rétroaction sur la page avec lien de contact",
+				"language": "fr",
+				"path": "page-feedback-contact-fr.html"
+			},
+			{
+				"title": "Report a problem",
+				"language": "en",
+				"path": "report-problem-en.html"
+			},
+			{
+				"title": "Signaler un problème",
+				"language": "fr",
+				"path": "report-problem-fr.html"
+			}
+		]
+	},
+	"dependencies": [
+		"Page details"
+	],
+	"a11yGuidance": "No accessibility guidance",
+	"variations": [
+		{
+			"name": {
+				"en": "Report a problem",
+				"fr": "Signaler un problème"
+			},
+			"status": "Stable",
+			"description": {
+				"en": "The Report a problem variation features an expand/collapse button with a list of checkboxes.",
+				"fr": "La variation Signaler un problème comporte un bouton développer/réduire avec une liste de cases à cocher."
+			},
+			"guidance": {
+				"en": "https://design.canada.ca/common-design-patterns/report-problem.html",
+				"fr": "https://conception.canada.ca/configurations-conception-communes/signaler-probleme.html"
+			},
+			"iteration": "_:iteration_rap_5",
+			"example": {
+				"en": [
+					{ "href": "http://localhost:4000/templates/content-en.html", "text": "Content page including Header v4.0" }
+				],
+				"fr": [
+
+				]
+			},
+			"implementation": [
+				"_:implement_rap"
+			],
+			"history": [
+				{
+					"en": "August 2023 - Removed JSON Manager extraction for 'externalReferer' and 'subject'.",
+					"fr": "Août 2023 – Suppression de l’extraction via le Gestionnaire JSON pour « externalReferer » et « subject »."
+				},
+				{
+					"en": "March 2023 - Leveraging JSON Manager Extractor and Data JSON to generate hidden input fields.",
+					"fr": "Mars 2023 - Utilise l'extracteur du Gestionnaire JSON et Data JSON pour générer des champs de saisie masqués"
+				},
+				{ 
+					"en": "January 2023 - Removed login error sub-options and renamed login error option.",
+					"fr": "Janvier 2023 – Suppression des sous-options d’erreur de connexion et l'option d’erreur de connexion renommée."
+				},
+				{ 
+					"en": "May 2022 - Rework of the template to use data-ajax. Includes fallback for basic HTML version.",
+					"fr": "Mai 2022 - Refonte du gabarit pour utiliser data-ajax. Inclut une solution de secours pour la version HTML simplifiée."
+				},
+				{ 
+					"en": "March 2021 - Initial implementation of the component.",
+					"fr": "Mars 2021 - Implémentation initiale de la composante."
+				}
+			]
+		}
+	],
+	"implementation": [
+		{
+			"@id": "_:implement_rap",
+			"status": "current",
+			"iteration": "_:iteration_rap_5",
+			"name": {
+				"en": "New",
+				"fr": "Nouveau"
+			},
+			"instruction": {
+				"en": {
+					"@type": "import",
+					"file": {
+						"@type": [ "@id", "rdf:HTML" ],
+						"@value": "samples/implement-rap-en.html"
+					}
+				},
+				"fr": {
+					"@type": "import",
+					"file": {
+						"@type": [ "@id", "rdf:HTML" ],
+						"@value": "samples/implement-rap-fr.html"
+					}
+				}
+			},
+			"sample": [
+				{
+					"@type": "source-code",
+					"description": "Code sample:",
+					"code": "&lt;div data-ajax-replace=&quot;ajax/report-problem-en.html&quot;&gt;&lt;div class=&quot;row row-no-gutters&quot;&gt;&lt;div class=&quot;col-sm-9 col-md-6 col-lg-5&quot;&gt;&lt;a class=&quot;btn btn-default btn-block&quot; href=&quot;https://www.canada.ca/en/report-problem.html&quot;&gt;Report a problem on this page&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
+				},
+				{
+					"@type": "source-code",
+					"description": "Ajaxed-in content:",
+					"code": {
+						"@type": [ "@id", "rdf:HTML" ],
+						"@value": "ajax/report-problem-en.html"
+					}
+				}
+			]
+		}
+	],
+	"changeset": [],
+	"iteration": [
+		{
+			"@id": "_:iteration_rap_1",
+			"name": {
+				"en": "Report a problem - Iteration 1",
+				"fr": "Signaler un problème - Itération 1"
+			},
+			"date": "2021-03",
+			"detectableBy": ".gc-rprt-prblm",
+			"comment": "Initial implementation of Report a problem",
+			"successor": "_:iteration_rap_2",
+			"assets": [
+				{
+					"@type": "source-code",
+					"description": "Code sample",
+					"code": {
+						"@type": [ "rdf:HTML", "@id" ],
+						"@value": "samples/report-problem-v1-en.html"
+					}
+				}
+			]
+		},
+		{
+			"@id": "_:iteration_rap_2",
+			"name": {
+				"en": "Report a problem - Iteration 2",
+				"fr": "Signaler un problème - Itération 2"
+			},
+			"date": "2022-05",
+			"detectableBy": "The component is now loaded through data-ajax",
+			"breaking": [
+				"Layout: rework of the template to use data-ajax. Includes fallback for basic HTML version",
+				"Semantic: added login error options (problem 5 to problem 10).",
+				"Behaviour: form now leverages wb-postback for form validation and no longer uses data-toggle on submit.",
+				"Behaviour: added error and success messages."
+			],
+			"predecessor": "_:iteration_rap_1",
+			"successor": "_:iteration_rap_3",
+			"assets": [
+				{
+					"@type": "source-code",
+					"description": "Ajaxed-in content",
+					"code": {
+						"@type": [ "rdf:HTML", "@id" ],
+						"@value": "ajax/deprecated/report-problem-v2-en.html"
+					}
+				}
+			]
+		},
+		{
+			"@id": "_:iteration_rap_3",
+			"name": {
+				"en": "Report a problem - Iteration 3",
+				"fr": "Signaler un problème - Itération 3"
+			},
+			"date": "2023-01",
+			"detectableBy": "Options 6 through 10 are not there.",
+			"breaking": [
+				"Semantic: removed login error sub-options.",
+				"Semantic: renamed login error option."
+			],
+			"predecessor": "_:iteration_rap_2",
+			"successor": "_:iteration_rap_4",
+			"assets": [
+				{
+					"@type": "source-code",
+					"description": "Ajaxed-in content",
+					"code": {
+						"@type": [ "rdf:HTML", "@id" ],
+						"@value": "ajax/deprecated/report-problem-v3-en.html"
+					}
+				}
+			]
+		},
+		{
+			"@id": "_:iteration_rap_4",
+			"name": {
+				"en": "Report a problem - Iteration 4",
+				"fr": "Signaler un problème - Itération 4"
+			},
+			"date": "2023-03",
+			"detectableBy": "Hidden inputs are generated via Data-JSON",
+			"breaking": [
+				"Semantic: leveraging JSON Manager Extractor and Data JSON to generate hidden input fields."
+			],
+			"predecessor": "_:iteration_rap_3",
+			"successor": "_:iteration_rap_5",
+			"assets": [
+				{
+					"@type": "source-code",
+					"description": "Ajaxed-in content",
+					"code": {
+						"@type": [ "rdf:HTML", "@id" ],
+						"@value": "ajax/deprecated/report-problem-v4-en.html"
+					}
+				}
+			]
+		},
+		{
+			"@id": "_:iteration_rap_5",
+			"name": {
+				"en": "Report a problem - Iteration 5",
+				"fr": "Signaler un problème - Itération 5"
+			},
+			"date": "2023-08",
+			"detectableBy": "externalReferer and subject are no longer generated via Data-JSON, but are now static.",
+			"breaking": [
+				"Semantic: removed JSON Manager extraction for 'externalReferer' and 'subject'."
+			],
+			"additions": [
+				"Semantic: added static hidden inputs for 'externalReferer' and 'subject'."
+			],
+			"predecessor": "_:iteration_rap_4",
+			"assets": [
+				{
+					"@type": "source-code",
+					"description": "Ajaxed-in content",
+					"code": {
+						"@type": [ "rdf:HTML", "@id" ],
+						"@value": "ajax/report-problem-en.html"
+					}
+				}
+			]
+		}
+	]
+}
