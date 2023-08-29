@@ -1719,12 +1719,27 @@ layout: default
 			]
 		},
 		{
+			"template": "[data-assets]",
+			"test": "fn:isArray",
+			"assess": "/assets",
+			"mapping": [
+				{
+					"selector": "ul",
+					"value": "/assets",
+					"mapping": [
+						{ "selector": "p[data-desc]", "value": "/description" },
+						{ "selector": "code[data-code]", "value": "/code", "encode": true }
+					]
+				}
+			]
+		},
+		{
 			"template": "[data-example]",
 			"test": "fn:isArray",
 			"assess": "/example/en",
 			"mapping": [
 				{
-					"selector": "ul",
+					"selector": "ul[data-assets-container]",
 					"value": "/example/en",
 					"mapping": [
 						{ "selector": "a", "value": "/href", "attr": "href" },
@@ -1796,6 +1811,18 @@ layout: default
 					<ul data-example>
 						<template>
 							<li><a href></a></li>
+						</template>
+					</ul>
+				</dd>
+			</template>
+			<template data-assets>
+				<dt>Assets</dt>
+				<dd>
+					<ul data-assets-container>
+						<template>
+							<li><p data-desc></p>
+							    <pre><code data-code></code></pre>
+              </li>
 						</template>
 					</ul>
 				</dd>
