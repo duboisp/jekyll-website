@@ -72,27 +72,29 @@ title: Test reporting template
 <section class="wb-tagfilter provisional">
 <h2 id="testReq">Accessibility conformance summary by conformity</h2>
 
-<fieldset>
-<legend><span class="field-name">Filter by conformance status</span></legend>
+<!-- There is an issue with the tagFilter plugin, my intend with this plugin is probably not supported
+<fieldset hidden>
+<legend><span class="field-name">Filter by conformance</span></legend>
 <ul class="list-unstyled">
 	<li class="checkbox">
 		<label>
-			<input type="checkbox" name="platform" class="wb-tagfilter-ctrl" value="acr:satisfied"> Satisfied
+			<input type="checkbox" name="conformance" class="wb-tagfilter-ctrl" value="acr:satisfied"> Satisfied
 		</label>
 	</li>
 	<li class="checkbox">
 		<label>
-			<input type="checkbox" name="platform" class="wb-tagfilter-ctrl" value="acr:furtherTestNeeded"> Further test needed
+			<input type="checkbox" name="conformance" class="wb-tagfilter-ctrl" value="acr:furtherTestNeeded"> Further test needed
 		</label>
 	</li>
 	<li class="checkbox">
 		<label>
-			<input type="checkbox" name="platform" class="wb-tagfilter-ctrl" value="acr:notSatisfied"> Not satisfied
+			<input type="checkbox" name="conformance" class="wb-tagfilter-ctrl" value="acr:notSatisfied"> Not satisfied
 		</label>
 	</li>
 </ul>
 </fieldset>
-	
+-->
+
 <details>
 	<summary>Filtering by components option</summary>
 <ul class="list-unstyled">
@@ -115,6 +117,7 @@ title: Test reporting template
           <h3 class="h5">{{ component.name }}</h3>
           <ul>
             {% for acr in component.acr %}
+              <!-- <li data-wb-tags="{{ acr.conformance }}"> -->
               <li data-wb-tags="{{ acr.conformance }}"><a href="{{ acr.link }}">{{ acr.date }} - {{ acr.conformance }}</a></li>
             {% else %}
               <li>None</li>
@@ -153,6 +156,47 @@ title: Test reporting template
 -->
 
 
+<!-- There is an issue with the tagFilter plugin, my intend with this plugin is probably not supported 
+<div class="checkbox">
+	<label>
+		<input type="checkbox" name="applicable" class="wb-tagfilter-ctrl" value="isApplicable"> Only the applicable ones for WCAG 2.1 Level AA
+	</label>
+</div>
+-->
+
+<!-- There is an issue with the tagFilter plugin, my intend with this plugin is probably not supported
+<fieldset>
+<legend><span class="field-name">Filter by outcome</span></legend>
+<ul class="list-unstyled">
+	<li class="checkbox">
+		<label>
+			<input type="checkbox" name="outcome" class="wb-tagfilter-ctrl" value="earl:passed"> Pass
+		</label>
+	</li>
+	<li class="checkbox">
+		<label>
+			<input type="checkbox" name="outcome" class="wb-tagfilter-ctrl" value="earl:failed"> Fail
+		</label>
+	</li>
+	<li class="checkbox">
+		<label>
+			<input type="checkbox" name="outcome" class="wb-tagfilter-ctrl" value="earl:cantTell"> Undetermined
+		</label>
+	</li>
+	<li class="checkbox">
+		<label>
+			<input type="checkbox" name="outcome" class="wb-tagfilter-ctrl" value="earl:inapplicable"> Not applicable
+		</label>
+	</li>
+	<li class="checkbox">
+		<label>
+			<input type="checkbox" name="outcome" class="wb-tagfilter-ctrl" value="earl:untested"> Not tested
+		</label>
+	</li>
+</ul>
+</fieldset>
+-->
+
 <details>
 	<summary>Filtering by components option</summary>
 <ul class="list-unstyled">
@@ -175,6 +219,7 @@ title: Test reporting template
           <h3 class="h5">{{ component.name }}</h3>
           <ul>
             {% for assessment in component.a11y %}
+	      <!-- <li data-wb-tags="{{ assessment.outcome }} {{% if assessment.isApplicable -%}}isApplicable{{%- endif -%}}"> -->
               <li><a href="{{ assessment.link }}">{{ assessment.date }} - {{ assessment.outcome }}</a></li>
             {% else %}
               <li>None</li>
