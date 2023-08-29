@@ -34,15 +34,71 @@ title: Test reporting template
             {% endfor %}
           </ul>
         </td>
-        <td>None</td>
+         <td>
+          <ul>
+            {% for acr in component.acr %}
+              <li>
+                <a href="{{ acr.link }}">
+                  {{ acr.date }} - 
+		  {% if acr.isPartial %}
+                    <strong>Partial</strong>: 
+                  {% endif %}
+		  {{ acr.state }} 
+                </a>
+              </li>
+            {% else %}
+              <li>None</li>
+            {% endfor %}
+          </ul>
+        </td>
       </tr>
     {% endfor %}
   </tbody>
 </table>
 
 
+
 <section class="wb-tagfilter provisional">
-<h2 id="testReq">Test requirement</h2>
+<h2 id="testReq">Accessibility conformance summary by conformity</h2>
+
+<details>
+	<summary>Filtering by components option</summary>
+<ul class="list-unstyled">
+{% for component in site.data.acrConformity.allComponents %}  
+  <li class="checkbox">
+    <label>
+				<input type="checkbox" name="component" class="wb-tagfilter-ctrl" value="{{ component }}">{{ component }} 
+		</label>
+  </li>
+{% endfor %}
+</ul>
+</details>
+
+<dl class="dl-horizontal dt-max_deactivate_ wb-tagfilter-items">
+  {% for conformity in site.data.acrConformity.list %}  
+    <dt>{{ conformity.id }}</dt>
+    {% for component in conformity.components %}
+      <dd data-wb-tags="{{ component.name }}">
+        <section>
+          <h3 class="h5">{{ component.name }}</h3>
+          <ul>
+            {% for acr in component.a11y %} <!-- component.acr -->
+              <li><a href="{{ acr.link }}">{{ acr.date }} - {{ acr.conformance }}</a></li>
+            {% else %}
+              <li>None</li>
+            {% endfor %}
+          </ul>
+        </section>
+      </dd>
+    {% endfor %}
+  {% endfor %}
+</dl>
+
+
+  </section>
+
+<section class="wb-tagfilter provisional">
+<h2 id="testReq">Assessment test requirement summary</h2>
 
 <!-- Tag filter for each Component 
 
