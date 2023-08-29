@@ -118,7 +118,7 @@ title: Test reporting template
           <ul>
             {% for acr in component.acr %}
               <!-- <li data-wb-tags="{{ acr.conformance }}"> -->
-              <li data-wb-tags="{{ acr.conformance }}"><a href="{{ acr.link }}">{{ acr.date }} - {{ acr.conformance }}</a></li>
+              <li><a href="{{ acr.link }}">{{ acr.date }} - {{ acr.conformance }}</a></li>
             {% else %}
               <li>None</li>
             {% endfor %}
