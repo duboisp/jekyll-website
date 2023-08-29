@@ -1723,36 +1723,31 @@ layout: default
 			"test": "fn:isArray",
 			"assess": "/assets",
 			"mapping": [
-				{
-					"selector": "ul",
-					"value": "/assets",
+				
+				{ 
+					"@type": "rdf:Alt",
 					"mapping": [
-
-						{ 
-							"@type": "rdf:Alt",
+						{
+							"template": "[data-show-asset]",
+							"test": "fn:guessType",
+							"expect": "source-code",
+							"assess": "/",
 							"mapping": [
-								{
-									"template": "[data-show-asset]",
-									"test": "fn:guessType",
-									"expect": "source-code",
-									"assess": "/",
-									"mapping": [
-											{ "selector": "p[data-desc]", "value": "/description" },
-											{ "selector": "code[data-code]", "value": "/code", "encode": true }
-									]
-								},
-								{
-									"template": "[data-text]",
-									"test": "fn:isLiteral",
-									"assess": "/",
-									"mapping": [
-											{ "selector": "li", "value": "/" }
-									]
-								}
+									{ "selector": "p[data-desc]", "value": "/description" },
+									{ "selector": "code[data-code]", "value": "/code", "encode": true }
+							]
+						},
+						{
+							"template": "[data-text]",
+							"test": "fn:isLiteral",
+							"assess": "/",
+							"mapping": [
+									{ "selector": "li", "value": "/" }
 							]
 						}
 					]
 				}
+
 			]
 		},
 		{
