@@ -378,7 +378,7 @@ layout: default
 
 				{
 	      			 "note": "Iterate the items",
-				 "selectorDEACTIVATED": "ul",
+				 "selector": "div",
 				 "value": "/assets",
 				 "mapping": [
 						{
@@ -488,14 +488,16 @@ layout: default
 			</template>
 			<template data-assets>
 				<dt>Assets</dt>
-				<template data-show-asset>
-					<dd><p data-desc></p>
-					    <pre><code data-code></code></pre>
-					</dd>
-				</template>
-				<template data-text>
-					<dd></dd>
-				</template>
+				<div>
+					<template data-show-asset>
+						<dd><p data-desc></p>
+						    <pre><code data-code></code></pre>
+						</dd>
+					</template>
+					<template data-text>
+						<dd></dd>
+					</template>
+				</div>
 			</template>
 		</dl>
 	</details>
