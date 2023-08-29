@@ -1727,8 +1727,28 @@ layout: default
 					"selector": "ul",
 					"value": "/assets",
 					"mapping": [
-						{ "selector": "p[data-desc]", "value": "/description" },
-						{ "selector": "code[data-code]", "value": "/code", "encode": true }
+
+						{ 
+							"@type": "rdf:Alt",
+							"mapping": [{
+								"template": "[data-show-asset]",
+								"test": "fn:guessType",
+								"expect": "sourcecode",
+								"assess": "/",
+								"mapping": [
+										{ "selector": "p[data-desc]", "value": "/description" },
+										{ "selector": "code[data-code]", "value": "/code", "encode": true }
+					]
+},
+	{
+								"template": "[data-text]",
+								"test": "fn:isLiteral",
+								"assess": "/",
+								"mapping": [
+										{ "selector": "li", "value": "/" }
+					]
+}]
+	
 					]
 				}
 			]
@@ -1819,10 +1839,13 @@ layout: default
 				<dt>Assets</dt>
 				<dd>
 					<ul data-assets-container>
-						<template>
+						<template data-show-asset>
 							<li><p data-desc></p>
 							    <pre><code data-code></code></pre>
               </li>
+						</template>
+						<template data-text>
+							<li></li>
 						</template>
 					</ul>
 				</dd>
