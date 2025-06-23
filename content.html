@@ -55,6 +55,7 @@ function extractHTML(node, clean) {
 	addClickEvent( node );
 	
 	// clone the node for its outer html sans inner html
+	let originalNode = node;
 	let outer = node.cloneNode();
 
 	// if the node has a shadowroot, jump into it
@@ -79,7 +80,7 @@ function extractHTML(node, clean) {
 				} else {
 					// if no assigned nodes, preserve the <slot> element itself
 					html += n.outerHTML;
-					addClickEvent( node );
+					addClickEvent( originalNode );
 				}
 			
 			// Remove a little bit of noise when extracting the HTML semantic
