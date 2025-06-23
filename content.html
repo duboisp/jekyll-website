@@ -1,7 +1,7 @@
 ---
 title: Test page - GCDS cards
 ---
-<scipt>
+<script>
   // Extract HTML including 
 
 function extractHTML(node, clean) {
@@ -102,10 +102,11 @@ function extractHTML(node, clean) {
         const parser = new DOMParser();
         const doc = parser.parseFromString(xmlStr, "application/xml");
 
+	console.log( "DOM extracted after application is loaded" );
         console.log( doc.documentElement );
 });
     
-</scipt>
+</script>
 
 
 <p>Paragraph: <a href="https://www.canada.ca/en.html">Canada.ca</a></p>
