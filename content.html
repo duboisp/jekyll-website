@@ -118,7 +118,7 @@ function extractHTML(node, clean) {
 
     window.addEventListener( "appload", (event) => {
         console.log( "Stencil APPS " + event.detail.namespace + " is ready");
-        let xmlStr = extractHTML( document.querySelector( 'gcds-card' ) );
+        let xmlStr = extractHTML( document.querySelector( 'main') );
         console.log( xmlStr );
 
         const parser = new DOMParser();
