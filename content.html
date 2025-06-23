@@ -36,6 +36,15 @@ function extractHTML(node, clean) {
 		}
 	}
 
+	// Bind a click event if this is an anchor element
+	if ( node.nodeName === "A" ) {
+		node.addEventListener("click", function (e) {
+		  console.log( "Anchor clicked" );
+		  console.log(this.className);
+		  console.log(this.textContent);
+		});
+	}
+	
 	// clone the node for its outer html sans inner html
 	let outer = node.cloneNode();
 
