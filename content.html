@@ -6,14 +6,17 @@ title: Test page - GCDS cards
 let clickSequence = 0;
 	
 function addClickEvent( node ) { 
-	clickSequence ++;
 	// Bind a click event if this is an anchor element
 	if ( node.nodeName === "A" ) {
+		
 		node.addEventListener("click", function (e) {
+			clickSequence ++;
 		  console.log( "Anchor clicked: " + clickSequence );
 		  console.log(this);
 		  console.log(this.textContent);
 		});
+		console.log( "Hooked on..." );
+		console.log( node );
 	}
 }
 	
