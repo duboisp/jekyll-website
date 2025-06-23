@@ -1,0 +1,143 @@
+---
+title: Test page - GCDS cards
+---
+<scipt>
+  // Extract HTML including 
+
+function extractHTML(node, clean) {
+	
+	// return a blank string if not a valid node
+	if (!node) return '';
+
+	clean = !!clean; // Ensure this remain a boolean value, default to false
+	
+	// if it is a text node just return the trimmed textContent
+	if (node.nodeType === 3) return node.textContent.trim();
+
+	// beyond here, only deal with element nodes
+	if (node.nodeType !== 1) return '';
+	
+	// Skip "<style>" element
+	if ( clean && node.nodeName === "STYLE" ) return '';
+
+	let html = '';
+
+	// Check if the current node are slottable
+	if ( node.assignedNodes ) {
+	
+		// check if slot has assigned nodes
+		let assignedNodes = node.assignedNodes();
+		if (assignedNodes.length) {
+			// if there are assigned nodes, recurse over them
+			for (let assignedNode of assignedNodes) {
+				html += extractHTML(assignedNode);
+			}
+			return html;
+		}
+	}
+
+	// clone the node for its outer html sans inner html
+	let outer = node.cloneNode();
+
+	// if the node has a shadowroot, jump into it
+	node = node.shadowRoot || node
+
+	if (node.children.length || node.childNodes.length) {
+
+
+		// iterate over childNodes which includes #text nodes and slots
+		for (let n of node.childNodes) {
+
+			// if the node is a slot
+			if (n.nodeName === 'SLOT') {
+
+				// check if slot has assigned nodes
+				let assignedNodes = n.assignedNodes();
+				if (assignedNodes.length > 0) {
+					// if there are assigned nodes, recurse over them
+					for (let assignedNode of assignedNodes) {
+						html += extractHTML(assignedNode);
+					}
+				} else {
+					// if no assigned nodes, preserve the <slot> element itself
+					html += n.outerHTML;
+				}
+			
+			// Remove a little bit of noise when extracting the HTML semantic
+			} else if ( clean && node.nodeName === "STYLE" ) {
+				// keep it empty
+
+			// node is not a slot, recurse normally
+			} else {
+				html += extractHTML(n);
+			}
+		}
+	} else {
+
+		// node has no children, insert its innerHTML
+		html = node.innerHTML;
+	}
+
+	// insert all the (children's) innerHTML
+	// into the (cloned) parent element
+	// and return the whole package without using the DOM correction
+
+	let outerHTML = outer.outerHTML.substr( 0, outer.outerHTML.length - outer.nodeName.length - 3  );
+	outerHTML += html;
+	outerHTML += outer.outerHTML.substr( -outer.nodeName.length - 3 ) ;
+
+	return outerHTML;
+
+}
+
+
+// console.log( extractHTML( document.querySelector( 'gcds-card' ) ) );
+
+
+    window.addEventListener( "appload", (event) => {
+        console.log( "Stencil APPS " + event.detail.namespace + " is ready");
+        let xmlStr = extractHTML( document.querySelector( 'gcds-card' ) );
+        console.log( xmlStr );
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(xmlStr, "application/xml");
+
+        console.log( doc.documentElement );
+});
+    
+</scipt>
+
+
+<p>Paragraph: <a href="https://www.canada.ca/en.html">Canada.ca</a></p>
+
+<p>Everything is wrap with divs.</p>
+
+<div class="gcdscardcontainer section">
+	<gcds-grid columns-tablet="1fr 1fr" columns-desktop="1fr 1fr 1fr" columns="1fr">
+
+		<div class="gcdscard section">
+			<gcds-card card-title="Lorem ipsum" href="#">
+				<gcds-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</gcds-text>
+			</gcds-card>
+		</div>
+
+		<div class="gcdscard section">
+			<gcds-card card-title="Aenean id" href="#">
+				<gcds-text>Aenean id sem tellus. Sed sodales mauris non sagittis auctor. Etiam tempus a metus in porta.</gcds-text>
+			</gcds-card>
+		</div>
+
+		<div class="gcdscard section">
+			<gcds-card card-title="Pellentesque dapibus" href="#" badge="badge">
+				<gcds-text>Pellentesque dapibus erat sit amet lectus scelerisque, sed gravida metus pellentesque.</gcds-text>
+			</gcds-card>
+		</div>
+
+		<div class="gcdscard section">
+			<gcds-card card-title="Proin at ligula" href="#">
+				<gcds-text>Proin at ligula tincidunt neque convallis varius.</gcds-text>
+			</gcds-card>
+		</div>
+
+	</gcds-grid>
+</div>
