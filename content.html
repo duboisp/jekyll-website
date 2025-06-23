@@ -3,7 +3,20 @@ title: Test page - GCDS cards
 ---
 <script>
   // Extract HTML including 
-
+let clickSequence = 0;
+	
+function addClickEvent( node ) { 
+	clickSequence ++;
+	// Bind a click event if this is an anchor element
+	if ( node.nodeName === "A" ) {
+		node.addEventListener("click", function (e) {
+		  console.log( "Anchor clicked: " + clickSequence );
+		  console.log(this);
+		  console.log(this.textContent);
+		});
+	}
+}
+	
 function extractHTML(node, clean) {
 	
 	// return a blank string if not a valid node
@@ -36,14 +49,7 @@ function extractHTML(node, clean) {
 		}
 	}
 
-	// Bind a click event if this is an anchor element
-	if ( node.nodeName === "A" ) {
-		node.addEventListener("click", function (e) {
-		  console.log( "Anchor clicked" );
-		  console.log(this.className);
-		  console.log(this.textContent);
-		});
-	}
+	addClickEvent( node );
 	
 	// clone the node for its outer html sans inner html
 	let outer = node.cloneNode();
@@ -70,6 +76,7 @@ function extractHTML(node, clean) {
 				} else {
 					// if no assigned nodes, preserve the <slot> element itself
 					html += n.outerHTML;
+					addClickEvent( node );
 				}
 			
 			// Remove a little bit of noise when extracting the HTML semantic
@@ -85,6 +92,8 @@ function extractHTML(node, clean) {
 
 		// node has no children, insert its innerHTML
 		html = node.innerHTML;
+		addClickEvent( node );
+
 	}
 
 	// insert all the (children's) innerHTML
