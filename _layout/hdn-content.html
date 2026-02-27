@@ -41,12 +41,3 @@ layout: core
 </template>
 {% include page-details/footer.html %}
 </main>
-
-{%- if page.secondarymenu -%}
-		<nav class="wb-sec col-md-3  col-md-pull-9" typeof="SiteNavigationElement" id="wb-sec">
-			<h2 id="wb-sec-h" class="wb-inv">{{ i18nText-secondaryMenu }}</h2>
-			{% include secondary-menu/secondary-menu.html -%}
-		</nav>
-	</div>
-</div>
-{%- endif -%}
