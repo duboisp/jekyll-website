@@ -1,0 +1,52 @@
+---
+layout: core
+---
+{%- include variable-core.liquid -%}
+{%- capture page-title -%}
+	{%- if page.titleH1 -%}
+		{{ page.titleH1 }}
+	{%- elsif page.title -%}
+		{{ page.title }}
+	{%- else -%}
+		Page untitled
+	{%- endif -%}
+{%- endcapture -%}
+
+<main class="container" property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">
+{% include main-page-title/main-page-title.html %}
+
+<section class="alert alert-warning">
+  <h2>Warning, this page content was intentionally hidden</h2>
+  <p>This is a demo page for web author and developer working on Canada.ca website. If you landed here by mistake, you may want to go on our official web site at <a href="https://www.canada.ca/en.html">https://www.canada.ca/en.html</a>.</p>
+  <p><a class="btn btn-call-to-action" href="https://www.canada.ca/en.html">Visit Canada.ca</a></p>
+  <hr>
+  <details>
+    <summary>Let me view this demo for:</summary>  
+    <div class="radio">
+      <label><input type="radio" name="viewoption" value="onetime" checked /> One time</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="viewoption" value="session" /> Current session</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="viewoption" value="days" /> A few days</label>
+    </div>
+    <button class="btn btn-default" type="button">Show the content</button>
+    </details>
+</section>
+<template>
+<!--
+  {{ content | replace: "<!--", "< ! - -" | replace: "-->", "- - >" }}
+-->
+</template>
+{% include page-details/footer.html %}
+</main>
+
+{%- if page.secondarymenu -%}
+		<nav class="wb-sec col-md-3  col-md-pull-9" typeof="SiteNavigationElement" id="wb-sec">
+			<h2 id="wb-sec-h" class="wb-inv">{{ i18nText-secondaryMenu }}</h2>
+			{% include secondary-menu/secondary-menu.html -%}
+		</nav>
+	</div>
+</div>
+{%- endif -%}
